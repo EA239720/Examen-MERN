@@ -1,0 +1,18 @@
+.main {
+    width:100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body {
+    width: 75%;
+    height: 100%;
+    
+    padding: 2rem;
+
+    overflow: auto;
+}
