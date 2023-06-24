@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import store from './store/store'
 
-import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './pages/App.tsx'
 import LogScreen from './pages/LogScreen.tsx'

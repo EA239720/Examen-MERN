@@ -5,7 +5,7 @@ import { Form, Button, Icon, Input, Message } from "semantic-ui-react";
 import { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { useAppDispatch } from '../store/hooks';
 
 import { startSession } from '../store/reducers/userSlice';
 
@@ -18,8 +18,7 @@ function LogScreen() {
     const [showPass, setShowPass] = useState('password');
     const [alert, setAlert] = useState(false);
     const [message, setMessage] = useState('')
-    
-    const user = useAppSelector((state) => state.user);
+
     const dispatch = useAppDispatch();
 
     const login = async (e : React.FormEvent<HTMLFormElement>) => {

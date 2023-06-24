@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction  } from "@reduxjs/toolkit";
-import { RoootState } from "../store";
+import { RootState } from "../store";
 
 interface userState {
     userLog: string,
@@ -28,6 +28,6 @@ export const userSlice = createSlice({
 
 export const { startSession, destroySession } = userSlice.actions
 
-export const getSession = (state: RoootState) => state.user.userLog
+export const getSession = (state: RootState) => state.user.userLog
 
 export default userSlice.reducer

@@ -116,7 +116,7 @@ function App() {
                     action
                 >
                     <input />
-                    <Button onClick={() => addTask()}>
+                    <Button loading={load} onClick={() => addTask()}>
                         <Icon name='add' />
                     </Button>
                 </Input>
@@ -183,12 +183,12 @@ function App() {
                 {
                     filter === 0 ?
                         tasks.map((task : taskInterface) => (
-                            <CardComponent key={task.task} task={task}/>
+                            <CardComponent key={task.task} taskDef={task}/>
                         )) 
                         :
                         tasks.map((task : taskInterface) => (
                             task.status === filter ?
-                                <CardComponent key={task.task} task={task}/>
+                                <CardComponent key={task.task} taskDef={task}/>
                                 : null
                         )) 
                 }

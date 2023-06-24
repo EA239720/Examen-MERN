@@ -4,8 +4,23 @@ import styles from '../styles/components.module.css'
 import formatDate from "../functions/FormatDate";
 import { useState } from "react";
 
+interface taskInterface {
+    _id: Object,
+    task: string,
+    user: string,
+    status: number,
+    createdAt: Date,
+    updatedAt: Date
+}
 
-function CardComponent({ task }) {
+interface CardProps {
+    taskDef: taskInterface
+}
+
+
+function CardComponent(props: CardProps) : JSX.Element {
+    const { taskDef } = props
+
     const [load, setLoad] = useState(false);
 
     const [message, setMessage] = useState('')
@@ -17,7 +32,7 @@ function CardComponent({ task }) {
         const response = await fetch("http://localhost:3001/updateTask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ "task": task._id, "status": 3 })
+            body: JSON.stringify({ "task": taskDef._id, "status": 3 })
         });
 
         const res = await response.json()
@@ -45,25 +60,25 @@ function CardComponent({ task }) {
             </Modal>
             <Card
                 color={
-                    task.status === 1 ? "green" 
-                        : task.status === 2 ? "red"
+                    taskDef.status === 1 ? "green" 
+                        : taskDef.status === 2 ? "red"
                             :"pink"
                 }
             >
                 <Card.Content className={styles.card}>
-                    <Card.Header content={task.task} />
+                    <Card.Header content={taskDef.task} />
                     <Card.Meta>
-                        {formatDate(task.createdAt)}
+                        {formatDate(taskDef.createdAt)}
                     </Card.Meta>
                     <Card.Description>
                         {
-                            task.status === 1 ? "ACTIVA" 
-                            : task.status === 2 ? "VENCIDA"
+                            taskDef.status === 1 ? "ACTIVA" 
+                            : taskDef.status === 2 ? "VENCIDA"
                                 :"COMPLETADA"
                         }
                     </Card.Description>
                     {
-                        task.status !==3 ?
+                        taskDef.status !==3 ?
                             <Button 
                                 color="green" 
                                 loading={load}
