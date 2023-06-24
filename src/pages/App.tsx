@@ -42,7 +42,7 @@ function App() {
             'status': 1
         }
 
-        const response = await fetch("http://localhost:3001/newTask", {
+        const response = await fetch("http://187.133.208.125:8082/newTask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ values })
@@ -66,7 +66,7 @@ function App() {
 
     useEffect(() => {
         const getTasks = async () => {
-            const response = await fetch("http://localhost:3001/getTasks", {
+            const response = await fetch("http://187.133.208.125:8082/getTasks", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ "user": user.userLog })
