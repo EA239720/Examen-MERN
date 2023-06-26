@@ -27,7 +27,7 @@ function RegScreen() {
             "pass": form.contrasena.value
         };
 
-        const response = await fetch("http://187.133.208.125:8082/newUser", {
+        const response = await fetch("http://localhost:8082/newUser", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ values })

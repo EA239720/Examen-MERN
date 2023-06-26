@@ -29,7 +29,7 @@ function CardComponent(props: CardProps) : JSX.Element {
     const completeTask = async () => {
         setLoad(true);
         
-        const response = await fetch("http://187.133.208.125:8082/updateTask", {
+        const response = await fetch("http://localhost:8082/updateTask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "task": taskDef._id, "status": 3 })
