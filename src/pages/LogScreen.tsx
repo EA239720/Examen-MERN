@@ -34,7 +34,7 @@ function LogScreen() {
             "pass": form.contrasena.value
         }
 
-        const response = await fetch("https://examen-mern-api-production.up.railway.app:8082/login", {
+        const response = await fetch("https://examen-mern-api-production.up.railway.app/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ values })

@@ -29,7 +29,7 @@ function CardComponent(props: CardProps) : JSX.Element {
     const completeTask = async () => {
         setLoad(true);
         
-        const response = await fetch("https://examen-mern-api-production.up.railway.app:8082/updateTask", {
+        const response = await fetch("https://examen-mern-api-production.up.railway.app/updateTask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "task": taskDef._id, "status": 3 })

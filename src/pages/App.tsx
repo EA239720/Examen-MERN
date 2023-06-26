@@ -42,7 +42,7 @@ function App() {
             'status': 1
         }
 
-        const response = await fetch("https://examen-mern-api-production.up.railway.app:8082/newTask", {
+        const response = await fetch("https://examen-mern-api-production.up.railway.app/newTask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ values })
@@ -66,7 +66,7 @@ function App() {
 
     useEffect(() => {
         const getTasks = async () => {
-            const response = await fetch("https://examen-mern-api-production.up.railway.app:8082/getTasks", {
+            const response = await fetch("https://examen-mern-api-production.up.railway.app/getTasks", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ "user": user.userLog })
