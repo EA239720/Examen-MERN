@@ -27,7 +27,7 @@ function RegScreen() {
             "pass": form.contrasena.value
         };
 
-        const response = await fetch("http://187.233.56.23:8082/newUser", {
+        const response = await fetch("https://examen-mern-api-production.up.railway.app:8082/newUser", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ values })
